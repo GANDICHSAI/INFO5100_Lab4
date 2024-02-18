@@ -51,7 +51,7 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
 
-        adminButton.setText("ADMIN");
+        adminButton.setText("SYSTEM ADMIN");
         adminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminButtonActionPerformed(evt);
@@ -63,13 +63,13 @@ public class MainForm extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(pattientButton)
-                .addGap(151, 151, 151)
-                .addComponent(doctorButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addGap(137, 137, 137)
                 .addComponent(adminButton)
-                .addGap(119, 119, 119))
+                .addGap(92, 92, 92)
+                .addComponent(doctorButton)
+                .addGap(99, 99, 99)
+                .addComponent(pattientButton)
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

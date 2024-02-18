@@ -12,36 +12,56 @@ import java.util.Date;
  */
 public class VitalSigns {
     
-    private float temperature;
+    private String temperature;
     
-    private int bloodPressure;
+    private String bloodPressure;
     
-    private int pulse;
+    private String bloodGlucose;
+    
+    private String pulse;
+    
+    private String weight;
     
     private Date dateOfVitalEntry;
 
-    public float getTemperature() {
+    public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(float temperature) {
+    public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
 
-    public int getBloodPressure() {
+    public String getBloodPressure() {
         return bloodPressure;
     }
 
-    public void setBloodPressure(int bloodPressure) {
+    public void setBloodPressure(String bloodPressure) {
         this.bloodPressure = bloodPressure;
     }
 
-    public int getPulse() {
+    public String getPulse() {
         return pulse;
     }
 
-    public void setPulse(int pulse) {
+    public void setPulse(String pulse) {
         this.pulse = pulse;
+    }
+
+    public String getBloodGlucose() {
+        return bloodGlucose;
+    }
+
+    public void setBloodGlucose(String bloodGlucose) {
+        this.bloodGlucose = bloodGlucose;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
     public Date getDateOfVitalEntry() {

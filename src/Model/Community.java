@@ -11,9 +11,15 @@ import java.util.ArrayList;
  * @author chait
  */
 public class Community {
-    private String Id;
-    private String name;
-    private ArrayList<Hospital> hospitals;
-     
+    
+    private String communityName;
+
+    public String getCommunityName() {
+        return communityName;
+    }
+
+    public void setCommunityName(String communityName) {
+        this.communityName = communityName;
+    }
     
 }

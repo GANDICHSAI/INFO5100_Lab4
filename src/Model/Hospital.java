@@ -11,10 +11,7 @@ import java.util.ArrayList;
  * @author chait
  */
 public class Hospital {
-    
-    
-    private int Id;
-    
+      
     private String hospitalName;
     
     private City city;
@@ -23,7 +20,7 @@ public class Hospital {
     
     private String phoneNumber;
     
-    private ArrayList<Doctor> doctors;
+    private ArrayList<DoctorDirectory> doctors;
     
     private ArrayList<Encounter> encounters;
 }

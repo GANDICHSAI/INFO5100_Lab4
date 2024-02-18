@@ -8,7 +8,12 @@ package Model;
  *
  * @author chait
  */
-public class Admin extends Person{
+public class Adminstrator extends Person{
+
+    public Adminstrator(String adminType, String firstName, String lastName, String id, String age, String phone, String email, House house, City city, Community community) {
+        super(firstName, lastName, id, age, phone, email, house, city, community);
+        this.adminType = adminType;
+    }
     private String adminType;
 
     public String getAdminType() {

@@ -9,14 +9,11 @@ package Model;
  * @author chait
  */
 public class Patient extends Person {
-    private int age;
 
-    public int getAge() {
-        return age;
+    public Patient(String firstName, String lastName, String id, String age, String phone, String email, House house, City city, Community community) {
+        super(firstName, lastName, id, age, phone, email, house, city, community);
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+    
     
 }

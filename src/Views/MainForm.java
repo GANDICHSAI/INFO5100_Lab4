@@ -37,6 +37,8 @@ public class MainForm extends javax.swing.JFrame {
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 100));
+
         pattientButton.setText("PATIENT");
         pattientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +85,8 @@ public class MainForm extends javax.swing.JFrame {
         );
 
         jSplitPane1.setTopComponent(jPanel1);
+
+        bottomPannel.setPreferredSize(new java.awt.Dimension(700, 700));
 
         javax.swing.GroupLayout bottomPannelLayout = new javax.swing.GroupLayout(bottomPannel);
         bottomPannel.setLayout(bottomPannelLayout);

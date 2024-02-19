@@ -10,4 +10,34 @@ package Model;
  */
 public class Encounter {
     
+    private Patient patient;
+    
+    private Doctor doctor;
+    
+    private VitalSigns vitalSigns;
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public VitalSigns getVitalSigns() {
+        return vitalSigns;
+    }
+
+    public void setVitalSigns(VitalSigns vitalSigns) {
+        this.vitalSigns = vitalSigns;
+    }
+    
 }

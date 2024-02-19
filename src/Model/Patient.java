@@ -10,10 +10,24 @@ package Model;
  */
 public class Patient extends Person {
 
-    public Patient(String firstName, String lastName, String id, String age, String phone, String email, House house, City city, Community community) {
-        super(firstName, lastName, id, age, phone, email, house, city, community);
+    private String patientType;
+    private String age;
+
+    public String getPatientType() {
+        return patientType;
     }
 
+    public void setPatientType(String patientType) {
+        this.patientType = patientType;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
     
     
 }

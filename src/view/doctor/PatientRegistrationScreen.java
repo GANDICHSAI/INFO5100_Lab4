@@ -4,6 +4,8 @@
  */
 package view.doctor;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author A
@@ -15,9 +17,9 @@ public class PatientRegistrationScreen extends javax.swing.JPanel {
      */
     JPanel bottomPanel;
     
-    public PatientRegistrationScreen() {
+    public PatientRegistrationScreen(JPanel bottomPanel) {
         initComponents();
-        this.bottomPanel = bottomPanel
+        this.bottomPanel = bottomPanel;
     }
 
     /**
@@ -102,7 +104,7 @@ public class PatientRegistrationScreen extends javax.swing.JPanel {
 
     private void existingPatientButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_existingPatientButton1ActionPerformed
         // TODO add your handling code here:
-        ExistingPatient existingPatientSelection = new ExistigPatient(bottomPanel);
+//        ExistingPatient existingPatientSelection = new ExistigPatient(bottomPanel);
     }//GEN-LAST:event_existingPatientButton1ActionPerformed
 
 

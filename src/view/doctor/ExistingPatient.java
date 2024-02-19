@@ -4,17 +4,23 @@
  */
 package view.doctor;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author A
  */
+
 public class ExistingPatient extends javax.swing.JPanel {
 
     /**
      * Creates new form ExistingPatient
      */
-    public ExistingPatient() {
+    JPanel bottomPanel;
+
+    public ExistingPatient(JPanel bottomPanel) {
         initComponents();
+        this.bottomPanel = bottomPanel;
     }
 
     /**

@@ -5,6 +5,7 @@
 package view.doctor;
 
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 
 /**
@@ -16,8 +17,8 @@ public class DoctorForm extends javax.swing.JPanel {
     /**
      * Creates new form DoctorForm
      */
-    private JPanel bottomPanel;
-    public DoctorForm() {
+    JPanel bottomPanel;
+    public DoctorForm(JPanel bottomPanel) {
         initComponents();
         this.bottomPanel = bottomPanel;
     }
@@ -45,7 +46,7 @@ public class DoctorForm extends javax.swing.JPanel {
 
         doctorIdTextField.setText("Enter Doctor ID");
 
-        goButton.setText("jButton1");
+        goButton.setText("Login");
         goButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goButtonActionPerformed(evt);
@@ -90,8 +91,9 @@ public class DoctorForm extends javax.swing.JPanel {
 
     private void goButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goButtonActionPerformed
         // TODO add your handling code here:
+        
         PatientRegistrationScreen patientRegister = new PatientRegistrationScreen(bottomPanel);
-        bottomPanel.add("patientScreen", patientRegister);
+        bottomPanel.add("patientRegistrationScreen", patientRegister);
         CardLayout layout = (CardLayout)bottomPanel.getLayout();
         layout.next(bottomPanel);
     }//GEN-LAST:event_goButtonActionPerformed

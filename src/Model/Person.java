@@ -13,24 +13,12 @@ public class Person {
     private String firstName;
     private String lastName;
     private String id;
-    private String age;
     private String phone;
     private String email;
     private House house;
     private City city;
     private Community community;
 
-    public Person(String firstName, String lastName, String id, String age, String phone, String email, House house, City city, Community community) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.id = id;
-        this.age = age;
-        this.phone = phone;
-        this.email = email;
-        this.house = house;
-        this.city = city;
-        this.community = community;
-    }
 
     public Community getCommunity() {
         return community;
@@ -62,14 +50,6 @@ public class Person {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-    
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
     }
 
     public String getLastName() {

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Views;
+import java.awt.CardLayout;
 import view.doctor.DoctorForm;
 
 /**
@@ -88,18 +89,7 @@ public class MainForm extends javax.swing.JFrame {
         jSplitPane1.setTopComponent(jPanel1);
 
         bottomPanel.setPreferredSize(new java.awt.Dimension(700, 700));
-
-        javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
-        bottomPanel.setLayout(bottomPanelLayout);
-        bottomPanelLayout.setHorizontalGroup(
-            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 755, Short.MAX_VALUE)
-        );
-        bottomPanelLayout.setVerticalGroup(
-            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
-        );
-
+        bottomPanel.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(bottomPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,7 +112,11 @@ public class MainForm extends javax.swing.JFrame {
 
     private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed
         // TODO add your handling code here:
-        DoctorForm DoctorForm = new DoctorForm(bottomPanel);
+        DoctorForm doctorForm = new DoctorForm(bottomPanel);
+//        FormPanel formObject = new FormPanel(bottomPanel);
+        bottomPanel.add(doctorForm);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
         
     }//GEN-LAST:event_doctorButtonActionPerformed
 

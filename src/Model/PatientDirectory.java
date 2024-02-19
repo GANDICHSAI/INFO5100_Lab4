@@ -4,10 +4,29 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author chait
  */
 public class PatientDirectory {
     
+    private ArrayList<Patient> patients;
+
+    public ArrayList<Patient> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(ArrayList<Patient> patients) {
+        this.patients = patients;
+    }
+    
+    public void addPatients(Patient patients) {
+        this.patients.add(patients);
+    }
+
+    public void deletePatients(Patient patients) {
+        this.patients.remove(patients);
+    }
 }

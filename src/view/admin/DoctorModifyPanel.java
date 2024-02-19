@@ -102,7 +102,6 @@ public class DoctorModifyPanel extends javax.swing.JPanel {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(200, 412));
-        jScrollPane1.setSize(new java.awt.Dimension(200, 402));
 
         doctorTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,7 +124,6 @@ public class DoctorModifyPanel extends javax.swing.JPanel {
         });
         doctorTable.setMinimumSize(new java.awt.Dimension(500, 80));
         doctorTable.setPreferredSize(new java.awt.Dimension(500, 80));
-        doctorTable.setSize(new java.awt.Dimension(500, 80));
         jScrollPane1.setViewportView(doctorTable);
         if (doctorTable.getColumnModel().getColumnCount() > 0) {
             doctorTable.getColumnModel().getColumn(0).setPreferredWidth(100);
@@ -270,12 +268,9 @@ public class DoctorModifyPanel extends javax.swing.JPanel {
                             .addComponent(addDoctorButton, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addDoctorLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(searchDoctorLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(searchDoctorLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,7 +327,10 @@ public class DoctorModifyPanel extends javax.swing.JPanel {
                                 .addComponent(deleteButton))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(291, 291, 291)
+                        .addComponent(addDoctorLabel)))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -384,7 +382,7 @@ public class DoctorModifyPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(communityLabel)
                             .addComponent(communityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(46, 46, 46)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchDoctorLabel))
@@ -439,7 +437,7 @@ public class DoctorModifyPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(communityLabel2)
                             .addComponent(communityTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

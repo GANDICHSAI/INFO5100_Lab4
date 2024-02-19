@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Views;
+import view.doctor.DoctorForm;
 
 /**
  *
@@ -31,7 +32,7 @@ public class MainForm extends javax.swing.JFrame {
         pattientButton = new javax.swing.JButton();
         doctorButton = new javax.swing.JButton();
         adminButton = new javax.swing.JButton();
-        bottomPannel = new javax.swing.JPanel();
+        bottomPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,20 +87,20 @@ public class MainForm extends javax.swing.JFrame {
 
         jSplitPane1.setTopComponent(jPanel1);
 
-        bottomPannel.setPreferredSize(new java.awt.Dimension(700, 700));
+        bottomPanel.setPreferredSize(new java.awt.Dimension(700, 700));
 
-        javax.swing.GroupLayout bottomPannelLayout = new javax.swing.GroupLayout(bottomPannel);
-        bottomPannel.setLayout(bottomPannelLayout);
-        bottomPannelLayout.setHorizontalGroup(
-            bottomPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
+        bottomPanel.setLayout(bottomPanelLayout);
+        bottomPanelLayout.setHorizontalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 755, Short.MAX_VALUE)
         );
-        bottomPannelLayout.setVerticalGroup(
-            bottomPannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        bottomPanelLayout.setVerticalGroup(
+            bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 595, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(bottomPannel);
+        jSplitPane1.setRightComponent(bottomPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,6 +122,8 @@ public class MainForm extends javax.swing.JFrame {
 
     private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed
         // TODO add your handling code here:
+        DoctorForm DoctorForm = new DoctorForm(bottomPanel);
+        
     }//GEN-LAST:event_doctorButtonActionPerformed
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
@@ -164,7 +167,7 @@ public class MainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminButton;
-    private javax.swing.JPanel bottomPannel;
+    private javax.swing.JPanel bottomPanel;
     private javax.swing.JButton doctorButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;

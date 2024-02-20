@@ -11,34 +11,34 @@ package Model;
 public class Doctor extends Person{
 
 
-    private String yearsOfExperiencce;
+    private int yearsOfExperiencce;
     
-    private String Qualifications;
+    private String qualifications;
     
-    private String Specialty;
+    private String specialty;
     
-    public String getYearsOfExperiencce() {
+    public int getYearsOfExperiencce() {
         return yearsOfExperiencce;
     }
 
-    public void setYearsOfExperiencce(String yearsOfExperiencce) {
+    public void setYearsOfExperiencce(int yearsOfExperiencce) {
         this.yearsOfExperiencce = yearsOfExperiencce;
     }
 
     public String getQualifications() {
-        return Qualifications;
+        return qualifications;
     }
 
     public void setQualifications(String Qualifications) {
-        this.Qualifications = Qualifications;
+        this.qualifications = qualifications;
     }
 
     public String getSpecialty() {
-        return Specialty;
+        return specialty;
     }
 
-    public void setSpecialty(String Specialty) {
-        this.Specialty = Specialty;
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
     }
     
 }

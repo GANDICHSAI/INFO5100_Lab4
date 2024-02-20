@@ -11,7 +11,7 @@ package Model;
 public class Patient extends Person {
 
     private String patientType;
-    private String age;
+    private int age;
 
     public String getPatientType() {
         return patientType;
@@ -21,11 +21,11 @@ public class Patient extends Person {
         this.patientType = patientType;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
     

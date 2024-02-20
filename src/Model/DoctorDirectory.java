@@ -23,8 +23,8 @@ public class DoctorDirectory {
     }
     
     
-    public void addDoctors(Doctor doctors) {
-        this.doctors.add(doctors);
+    public void addDoctor(Doctor doctor) {
+        this.doctors.add(doctor);
     }
 
     public void deleteDoctors(Doctor doctors) {

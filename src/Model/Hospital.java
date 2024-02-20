@@ -20,9 +20,9 @@ public class Hospital {
     
     private String phoneNumber;
     
-    private ArrayList<DoctorDirectory> doctorsDirectory;
+    private DoctorDirectory doctorsDirectory;
     
-    private ArrayList<EncounterDirectory> encounterDirectory;
+    private EncounterDirectory encounterDirectory;
     
     public String getHospitalName() {
         return hospitalName;
@@ -56,19 +56,19 @@ public class Hospital {
         this.phoneNumber = phoneNumber;
     }
 
-    public ArrayList<DoctorDirectory> getDoctorsDirectory() {
+    public DoctorDirectory getDoctorsDirectory() {
         return doctorsDirectory;
     }
 
-    public void setDoctorsDirectory(ArrayList<DoctorDirectory> doctorsDirectory) {
+    public void setDoctorsDirectory(DoctorDirectory doctorsDirectory) {
         this.doctorsDirectory = doctorsDirectory;
     }
 
-    public ArrayList<EncounterDirectory> getEncounterDirectory() {
+    public EncounterDirectory getEncounterDirectory() {
         return encounterDirectory;
     }
 
-    public void setEncounterDirectory(ArrayList<EncounterDirectory> encounterDirectory) {
+    public void setEncounterDirectory(EncounterDirectory encounterDirectory) {
         this.encounterDirectory = encounterDirectory;
     }
 }

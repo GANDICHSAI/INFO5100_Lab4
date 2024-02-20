@@ -4,7 +4,7 @@
  */
 package Model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -12,23 +12,23 @@ import java.util.Date;
  */
 public class VitalSigns {
     
-    private String temperature;
+    private double temperature;
     
     private String bloodPressure;
     
-    private String bloodGlucose;
+    private double bloodGlucose;
     
-    private String pulse;
+    private int pulse;
     
-    private String weight;
+    private double weight;
     
-    private Date dateOfVitalEntry;
+    private LocalDate dateOfVitalEntry;
 
-    public String getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(String temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 
@@ -40,35 +40,35 @@ public class VitalSigns {
         this.bloodPressure = bloodPressure;
     }
 
-    public String getPulse() {
+    public int getPulse() {
         return pulse;
     }
 
-    public void setPulse(String pulse) {
+    public void setPulse(int pulse) {
         this.pulse = pulse;
     }
 
-    public String getBloodGlucose() {
+    public double getBloodGlucose() {
         return bloodGlucose;
     }
 
-    public void setBloodGlucose(String bloodGlucose) {
+    public void setBloodGlucose(double bloodGlucose) {
         this.bloodGlucose = bloodGlucose;
     }
 
-    public String getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public Date getDateOfVitalEntry() {
+    public LocalDate getDateOfVitalEntry() {
         return dateOfVitalEntry;
     }
 
-    public void setDateOfVitalEntry(Date dateOfVitalEntry) {
+    public void setDateOfVitalEntry(LocalDate dateOfVitalEntry) {
         this.dateOfVitalEntry = dateOfVitalEntry;
     }
     

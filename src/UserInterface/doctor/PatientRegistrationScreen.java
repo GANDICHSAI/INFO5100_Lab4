@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view.doctor;
+package UserInterface.doctor;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -34,7 +35,7 @@ public class PatientRegistrationScreen extends javax.swing.JPanel {
         patientTypeTitleLable = new javax.swing.JLabel();
         existingPatientButton1 = new javax.swing.JButton();
         newPatientButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        returnToLoginButton = new javax.swing.JButton();
 
         patientTypeTitleLable.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         patientTypeTitleLable.setText("Select Patient Type");
@@ -53,10 +54,10 @@ public class PatientRegistrationScreen extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("Back");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        returnToLoginButton.setText("Return to Login");
+        returnToLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                returnToLoginButtonActionPerformed(evt);
             }
         });
 
@@ -76,14 +77,14 @@ public class PatientRegistrationScreen extends javax.swing.JPanel {
                         .addComponent(newPatientButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(jButton3)))
+                        .addComponent(returnToLoginButton)))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jButton3)
+                .addComponent(returnToLoginButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(patientTypeTitleLable)
                 .addGap(70, 70, 70)
@@ -96,22 +97,33 @@ public class PatientRegistrationScreen extends javax.swing.JPanel {
 
     private void newPatientButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPatientButton2ActionPerformed
         // TODO add your handling code here:
+        NewPatient newPatientScreen = new NewPatient(bottomPanel);
+        bottomPanel.add("NewPatient", newPatientScreen);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_newPatientButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void returnToLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnToLoginButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        DoctorForm doctorForm = new DoctorForm(bottomPanel);
+        bottomPanel.add("DoctorScreen", doctorForm);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_returnToLoginButtonActionPerformed
 
     private void existingPatientButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_existingPatientButton1ActionPerformed
         // TODO add your handling code here:
-//        ExistingPatient existingPatientSelection = new ExistigPatient(bottomPanel);
+        ExistingPatient existingPatient = new ExistingPatient(bottomPanel);
+        bottomPanel.add("ExistingPatientScreen", existingPatient);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_existingPatientButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton existingPatientButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton newPatientButton2;
     private javax.swing.JLabel patientTypeTitleLable;
+    private javax.swing.JButton returnToLoginButton;
     // End of variables declaration//GEN-END:variables
 }

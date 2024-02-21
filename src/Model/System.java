@@ -4,8 +4,10 @@
  */
 package Model;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author yihan
@@ -106,7 +108,7 @@ public class System {
         return encounter;
     }
 
-    public VitalSigns mockVitalSigns(double temperature, String bloodPressure, double bloodGlucose, int pulse, double weight, LocalDate dateOfVitalEntry) {
+    public VitalSigns mockVitalSigns(double temperature, String bloodPressure, double bloodGlucose, int pulse, double weight, Date dateOfVitalEntry) {
         VitalSigns vitalSigns = new VitalSigns();
         vitalSigns.setTemperature(temperature);
         vitalSigns.setBloodPressure(bloodPressure);
@@ -186,12 +188,15 @@ public class System {
         newHospital.setDoctorsDirectory(newDoctorDirectory);
 
         //Encounter Dir
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2024, Calendar.FEBRUARY, 20, 0, 0, 0);
+        Date dateOfVitalEntry = calendar.getTime();
         EncounterDirectory encounterDirectory = new EncounterDirectory();
         Community mockedCommunityForPatient1 = mockCommunity("downtown");
         City mockedCityForPatient1 = mockCity("Toronto", "M4Y", torontoCommunityList);
         House mockedHouseForPatient1 = mockHouse("20", "Queen St");
         Patient mockedPatient1 = mockPatient("Coco", "Wang", "101", "4345838334", "coco@gmail.com", mockedHouseForPatient1, mockedCommunityForPatient1, mockedCityForPatient1, "Outpatient", 50);
-        VitalSigns mockedVitalSigns = mockVitalSigns(37.8, "90/120", 70, 60, 50, LocalDate.of(2024, 2, 20));
+        VitalSigns mockedVitalSigns = mockVitalSigns(37.8, "90/120", 70, 60, 50, dateOfVitalEntry);
         Encounter mockedEncounter = mockEncounter(mockedDoctor1, mockedPatient1, mockedVitalSigns);
         encounterDirectory.addEncounter(mockedEncounter);
         newHospital.setEncounterDirectory(encounterDirectory);

@@ -2,7 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view.doctor;
+package UserInterface.doctor;
+
+import Model.City;
+import Model.Community;
+import Model.House;
+import Model.Patient;
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,7 +24,10 @@ public class NewPatient extends javax.swing.JPanel {
     /**
      * Creates new form NewPatient
      */
-    public NewPatient() {
+    JPanel bottomPanel;
+    
+    public NewPatient(JPanel bottomPanel) {
+        this.bottomPanel = bottomPanel;
         initComponents();
     }
 
@@ -46,6 +60,9 @@ public class NewPatient extends javax.swing.JPanel {
         patientCityextField3 = new javax.swing.JTextField();
         communityComboBox = new javax.swing.JComboBox<>();
         saveButton = new javax.swing.JButton();
+        ReturnToPatientReg = new javax.swing.JButton();
+        patientTypeLabel = new javax.swing.JLabel();
+        patientTypeComboBox = new javax.swing.JComboBox<>();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Creat New Patient Entry");
@@ -93,8 +110,34 @@ public class NewPatient extends javax.swing.JPanel {
         });
 
         communityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        communityComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                communityComboBoxActionPerformed(evt);
+            }
+        });
 
         saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
+        ReturnToPatientReg.setText("Return To Patient Registration");
+        ReturnToPatientReg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReturnToPatientRegActionPerformed(evt);
+            }
+        });
+
+        patientTypeLabel.setText("Patient Type");
+
+        patientTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "In-Patient", "Out-Patient" }));
+        patientTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientTypeComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -131,19 +174,28 @@ public class NewPatient extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cityLabel4)
-                                    .addComponent(communityLabel7))
+                                    .addComponent(communityLabel7)
+                                    .addComponent(patientTypeLabel))
                                 .addGap(68, 68, 68)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(saveButton)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(patientCityextField3)
-                                        .addComponent(communityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(186, Short.MAX_VALUE))
+                                    .addComponent(patientCityextField3)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(saveButton)
+                                            .addComponent(communityComboBox, 0, 242, Short.MAX_VALUE)
+                                            .addComponent(patientTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(ReturnToPatientReg, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(32, 32, 32)
+                .addComponent(ReturnToPatientReg)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,9 +233,16 @@ public class NewPatient extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(communityLabel7)
                     .addComponent(communityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addComponent(saveButton)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(patientTypeLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(saveButton)
+                        .addGap(34, 34, 34))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(patientTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -203,9 +262,60 @@ public class NewPatient extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_patientCityextField3ActionPerformed
 
+    private void ReturnToPatientRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnToPatientRegActionPerformed
+        // TODO add your handling code here:
+        PatientRegistrationScreen patientRegister = new PatientRegistrationScreen(bottomPanel);
+        bottomPanel.add("patientScreen", patientRegister);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_ReturnToPatientRegActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        // TODO add your handling code here:
+        Patient patient = new Patient();
+        House house = new House();
+        City city = new City();
+        Community community = new Community();
+        patient.setFirstName(patientFnTextField.getText());
+        patient.setLastName(patientLnTextField.getText());
+        patient.setId(patientIDTextField1.getText());
+        patient.setAge(Integer.parseInt(patientAgeTextField3.getText()));
+        patient.setPhone(patientPnTextField2.getText());
+        patient.setEmail(patientEmailTextField1.getText());
+        
+        house.setHouseNumber(patientHouseTextField2.getText());
+        city.setCityName(patientCityextField3.getText());
+        
+        //Cast selected community item as selectedCommunity object
+       
+        
+        //Community selectedCommunity = (Community) communityComboBox.getSelectedItem();
+        //create arraylist and add the selectedCommunity
+        //ArrayList<Community> communityList = new ArrayList<>();
+        //communityList.add(selectedCommunity);
+
+        // Now pass this list to setCommunityDirectory
+        //community.setCommunityName(communityComboBox.getSelectedItem().toString);
+        
+        //set new patientType
+        String selectedPatientType = patientTypeComboBox.getSelectedItem().toString();
+        patient.setPatientType(selectedPatientType);
+        JOptionPane.showMessageDialog(this, "Saved! (dummy data, not stored) ");
+        
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void communityComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_communityComboBoxActionPerformed
+
+    private void patientTypeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientTypeComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_patientTypeComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IDLabel4;
+    private javax.swing.JButton ReturnToPatientReg;
     private javax.swing.JLabel ageLabel5;
     private javax.swing.JLabel cityLabel4;
     private javax.swing.JComboBox<String> communityComboBox;
@@ -223,6 +333,8 @@ public class NewPatient extends javax.swing.JPanel {
     private javax.swing.JTextField patientIDTextField1;
     private javax.swing.JTextField patientLnTextField;
     private javax.swing.JTextField patientPnTextField2;
+    private javax.swing.JComboBox<String> patientTypeComboBox;
+    private javax.swing.JLabel patientTypeLabel;
     private javax.swing.JLabel pnLabel6;
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables

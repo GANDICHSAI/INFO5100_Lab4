@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view.doctor;
+package UserInterface.doctor;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -43,6 +44,11 @@ public class ExistingPatient extends javax.swing.JPanel {
         searchPatientButton1.setText("Go");
 
         backToButton1.setText("<< Back");
+        backToButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backToButton1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,6 +95,14 @@ public class ExistingPatient extends javax.swing.JPanel {
                 .addContainerGap(165, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backToButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToButton1ActionPerformed
+        // TODO add your handling code here:
+        PatientRegistrationScreen patientRegister = new PatientRegistrationScreen(bottomPanel);
+        bottomPanel.add("patientScreen", patientRegister);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_backToButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

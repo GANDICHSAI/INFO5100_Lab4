@@ -5,6 +5,7 @@
 package Model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -22,7 +23,7 @@ public class VitalSigns {
     
     private double weight;
     
-    private LocalDate dateOfVitalEntry;
+    private Date dateOfVitalEntry;
 
     public double getTemperature() {
         return temperature;
@@ -64,11 +65,11 @@ public class VitalSigns {
         this.weight = weight;
     }
 
-    public LocalDate getDateOfVitalEntry() {
+    public Date getDateOfVitalEntry() {
         return dateOfVitalEntry;
     }
 
-    public void setDateOfVitalEntry(LocalDate dateOfVitalEntry) {
+    public void setDateOfVitalEntry(Date dateOfVitalEntry) {
         this.dateOfVitalEntry = dateOfVitalEntry;
     }
     

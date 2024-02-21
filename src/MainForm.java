@@ -4,7 +4,8 @@
  */
 
 import java.awt.CardLayout;
-import view.doctor.DoctorForm;
+
+import UserInterface.doctor.DoctorForm;
 
 /**
  *

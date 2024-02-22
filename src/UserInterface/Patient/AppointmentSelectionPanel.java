@@ -17,10 +17,13 @@ public class AppointmentSelectionPanel extends javax.swing.JPanel {
      * Creates new form BookAnAppointment
      */
     JPanel bottomPanel;
-
-    public AppointmentSelectionPanel(JPanel bottomPanel) {
+    Models.Systems rootDataObj;
+     
+    public AppointmentSelectionPanel(JPanel bottomPanel, Models.Systems rootDataObj) {
         initComponents();
         this.bottomPanel = bottomPanel;
+        this.rootDataObj = rootDataObj;
+        System.out.println("-----2" + this.rootDataObj.getRootCityDirectory());
     }
 
     /**
@@ -71,7 +74,7 @@ public class AppointmentSelectionPanel extends javax.swing.JPanel {
     private void appointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentButtonActionPerformed
         // TODO add your handling code here:
         
-        LocationPanel locationPanel = new LocationPanel(bottomPanel);
+        LocationPanel locationPanel = new LocationPanel(bottomPanel, rootDataObj);
         bottomPanel.add(locationPanel);
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);

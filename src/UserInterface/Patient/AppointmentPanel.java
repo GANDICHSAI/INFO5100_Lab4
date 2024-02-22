@@ -215,5 +215,6 @@ public class AppointmentPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     // End of variables declaration//GEN-END:variables
 }

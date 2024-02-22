@@ -4,6 +4,9 @@
  */
 package UserInterface.Patient;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author chait
@@ -13,8 +16,11 @@ public class AppointmentSelectionPanel extends javax.swing.JPanel {
     /**
      * Creates new form BookAnAppointment
      */
-    public AppointmentSelectionPanel() {
+    JPanel bottomPanel;
+
+    public AppointmentSelectionPanel(JPanel bottomPanel) {
         initComponents();
+        this.bottomPanel = bottomPanel;
     }
 
     /**
@@ -64,6 +70,11 @@ public class AppointmentSelectionPanel extends javax.swing.JPanel {
 
     private void appointmentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentButtonActionPerformed
         // TODO add your handling code here:
+        
+        LocationPanel locationPanel = new LocationPanel(bottomPanel);
+        bottomPanel.add(locationPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_appointmentButtonActionPerformed
 
 

@@ -7,6 +7,7 @@ package UserInterface.admin;
 import Models.City;
 import Models.Doctor;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -116,6 +117,12 @@ public class DoctorAdminPanel extends javax.swing.JPanel {
         qualificationLabel.setText("Qualifications");
 
         specialtyLabel.setText("Specialty");
+
+        yearofExperienceTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                yearofExperienceTextFieldKeyPressed(evt);
+            }
+        });
 
         addDoctorButton.setText("ADD NEW DOCTOR DETAILS");
         addDoctorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -385,6 +392,18 @@ public class DoctorAdminPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, e.getMessage(),"Selection Error",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_doctorTableMouseClicked
+
+    private void yearofExperienceTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_yearofExperienceTextFieldKeyPressed
+        // TODO add your handling code here:
+        try{
+            int yoe = Integer.parseInt(yearofExperienceTextField.getText());
+            
+            yearofExperienceTextField.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            yearofExperienceTextField.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_yearofExperienceTextFieldKeyPressed
     private void populateDoctorDetails(Doctor doctor){
         
         

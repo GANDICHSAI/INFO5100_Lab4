@@ -5,6 +5,7 @@
 package UserInterface.doctor;
 
 import Models.Patient;
+import java.awt.Color;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -50,6 +51,12 @@ public class VitalSigns extends javax.swing.JPanel {
         saveButton1 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
+        pulseTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pulseTextField4KeyPressed(evt);
+            }
+        });
+
         weightLabel5.setText("Weight");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -62,12 +69,35 @@ public class VitalSigns extends javax.swing.JPanel {
                 tempTextFieldActionPerformed(evt);
             }
         });
+        tempTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tempTextFieldKeyPressed(evt);
+            }
+        });
 
         bpLabel2.setText("Blood Pressure");
 
+        BPTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BPTextField2KeyPressed(evt);
+            }
+        });
+
         bgLabel3.setText("Blood Gluecose");
 
+        weightTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                weightTextField3KeyPressed(evt);
+            }
+        });
+
         pulseLabel4.setText("Pulse");
+
+        BgTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BgTextField4KeyPressed(evt);
+            }
+        });
 
         doeLabel2.setText("Date of Entry");
 
@@ -83,39 +113,40 @@ public class VitalSigns extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(temLabel2)
-                    .addComponent(bpLabel2)
-                    .addComponent(bgLabel3))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(BPTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                            .addComponent(BgTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tempTextField))
-                        .addGap(82, 82, 82)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(57, 57, 57)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(temLabel2)
+                            .addComponent(bpLabel2)
+                            .addComponent(bgLabel3))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(doeLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
+                                .addGap(84, 84, 84)
+                                .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pulseLabel4)
-                                    .addComponent(weightLabel5))
-                                .addGap(51, 51, 51)
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(BPTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                                    .addComponent(BgTextField4, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tempTextField))
+                                .addGap(82, 82, 82)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(weightTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                                    .addComponent(pulseTextField4))))))
-                .addContainerGap(105, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(294, 294, 294)
-                .addComponent(saveButton1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(doeLabel2)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(pulseLabel4)
+                                            .addComponent(weightLabel5))
+                                        .addGap(51, 51, 51)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(weightTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                            .addComponent(pulseTextField4)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(294, 294, 294)
+                        .addComponent(saveButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -168,6 +199,58 @@ public class VitalSigns extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Diagnose Completed");
         
     }//GEN-LAST:event_saveButton1ActionPerformed
+
+    private void tempTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tempTextFieldKeyPressed
+        // TODO add your handling code here:
+        try{
+            double temp = Double.parseDouble(tempTextField.getText());
+            //int temperature = Integer.parseInt(tempTextField.getText());
+            tempTextField.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            tempTextField.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_tempTextFieldKeyPressed
+
+    private void pulseTextField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pulseTextField4KeyPressed
+        // TODO add your handling code here:
+        try{
+            double pulse = Double.parseDouble(pulseTextField4.getText());
+            
+            pulseTextField4.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            pulseTextField4.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_pulseTextField4KeyPressed
+
+    private void BPTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BPTextField2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BPTextField2KeyPressed
+
+    private void weightTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_weightTextField3KeyPressed
+        // TODO add your handling code here:
+        try{
+            double weight = Double.parseDouble(weightTextField3.getText());
+            
+            weightTextField3.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            weightTextField3.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_weightTextField3KeyPressed
+
+    private void BgTextField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BgTextField4KeyPressed
+        // TODO add your handling code here:
+        try{
+            double bg = Double.parseDouble(BgTextField4.getText());
+            
+            BgTextField4.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            BgTextField4.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_BgTextField4KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

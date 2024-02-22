@@ -4,7 +4,13 @@
  */
 package UserInterface.doctor;
 
+import Models.AdminLoginCreds;
+import UserInterface.admin.CommunityOptionPanel;
+import UserInterface.admin.DoctorOptionPanel;
+import UserInterface.admin.HospitalOptionPanel;
+import UserInterface.admin.PatientOptionPanel;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -34,17 +40,25 @@ public class DoctorForm extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         drTitleLable = new javax.swing.JLabel();
-        doctorIdTextField = new javax.swing.JTextField();
+        userIdField = new javax.swing.JTextField();
         goButton = new javax.swing.JButton();
+        passwordField = new javax.swing.JPasswordField();
+        adminID = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Please Enter Your Doctor ID to Begin");
+        jLabel1.setText("PLEASE LOGIN TO DOCTOR PORTAL");
 
         drTitleLable.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         drTitleLable.setText("WELCOME DOCTORS");
         drTitleLable.setToolTipText("");
 
-        doctorIdTextField.setText("Enter Doctor ID");
+        userIdField.setText("Enter Doctor ID");
+        userIdField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userIdFieldActionPerformed(evt);
+            }
+        });
 
         goButton.setText("Login");
         goButton.addActionListener(new java.awt.event.ActionListener() {
@@ -53,56 +67,121 @@ public class DoctorForm extends javax.swing.JPanel {
             }
         });
 
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
+
+        adminID.setText("User ID");
+
+        jLabel2.setText("Password");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(213, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(197, 197, 197))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(231, 231, 231)
                         .addComponent(drTitleLable))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(doctorIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(193, 193, 193)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(292, 292, 292)
-                        .addComponent(goButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(281, 281, 281)
+                        .addComponent(goButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(adminID))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(userIdField, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                            .addComponent(passwordField))))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(drTitleLable)
-                .addGap(34, 34, 34)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(45, 45, 45)
-                .addComponent(doctorIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(userIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(adminID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)))
+                .addGap(60, 60, 60)
                 .addComponent(goButton)
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addContainerGap(393, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void goButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goButtonActionPerformed
         // TODO add your handling code here:
         
-        PatientRegistrationScreen patientRegister = new PatientRegistrationScreen(bottomPanel);
-        bottomPanel.add("patientRegistrationScreen", patientRegister);
-        CardLayout layout = (CardLayout)bottomPanel.getLayout();
+        try{
+            AdminLoginCreds adminLoginCreds = new AdminLoginCreds();
+            adminLoginCreds.addCreds();
+
+            char [] passwordChars = passwordField.getPassword();
+            String password = new String(passwordChars);
+
+
+            if (adminLoginCreds.authenticate(userIdField.getText(), password)){
+                
+                
+                NewPatient patientRegistrationScreen = new NewPatient(bottomPanel);
+                bottomPanel.add(patientRegistrationScreen);
+                CardLayout layout = (CardLayout) bottomPanel.getLayout();
+                layout.next(bottomPanel);
+
+            }
+
+            else{
+                throw new IllegalArgumentException("Please provide valid credentials");
+ 
+            }
+            
+        }
+        
+        catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(),"Doctor Access Error",JOptionPane.ERROR_MESSAGE);
+        }
+        NewPatient newPatientScreen = new NewPatient(bottomPanel);
+        bottomPanel.add("NewPatient", newPatientScreen);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);
+              
     }//GEN-LAST:event_goButtonActionPerformed
+
+    private void userIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIdFieldActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_userIdFieldActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField doctorIdTextField;
+    private javax.swing.JLabel adminID;
     private javax.swing.JLabel drTitleLable;
     private javax.swing.JButton goButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField userIdField;
     // End of variables declaration//GEN-END:variables
 }

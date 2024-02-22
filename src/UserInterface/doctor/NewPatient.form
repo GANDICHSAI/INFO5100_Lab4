@@ -16,6 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -23,88 +24,101 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="fnLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lnLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="IDLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ageLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pnLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="emailLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="houseLabel3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="patientHouseTextField2" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="fnLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lnLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="IDLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ageLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pnLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="emailLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="patientPnTextField2" max="32767" attributes="0"/>
-                                  <Component id="patientIDTextField1" max="32767" attributes="0"/>
-                                  <Component id="patientLnTextField" max="32767" attributes="0"/>
-                                  <Component id="patientFnTextField" max="32767" attributes="0"/>
-                                  <Component id="patientAgeTextField3" max="32767" attributes="0"/>
-                                  <Component id="patientEmailTextField1" alignment="0" min="-2" pref="242" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cityLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="communityLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="patientTypeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="patientCityextField3" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="saveButton" min="-2" max="-2" attributes="0"/>
-                                          <Component id="communityComboBox" pref="242" max="32767" attributes="0"/>
-                                          <Component id="patientTypeComboBox" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                          <Component id="patientPnTextField2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="patientAgeTextField3" alignment="0" max="32767" attributes="0"/>
+                          <Component id="patientIDTextField1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="patientLnTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="patientFnTextField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="patientEmailTextField1" min="-2" pref="107" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="houseLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cityLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="communityLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="patientTypeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="patientHouseTextField2" max="32767" attributes="0"/>
+                          <Component id="patientCityextField3" max="32767" attributes="0"/>
+                          <Component id="communityComboBox" max="32767" attributes="0"/>
+                          <Component id="patientTypeComboBox" min="-2" pref="105" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="ReturnToPatientReg" min="-2" pref="202" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
+                      <Component id="saveButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
+                      <Component id="diagnoseButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="185" max="32767" attributes="0"/>
+              <EmptySpace pref="132" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="ReturnToPatientReg" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="fnLabel2" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientFnTextField" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="patientFnTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="houseLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="patientCityextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lnLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientLnTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="IDLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientIDTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ageLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientAgeTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lnLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="patientLnTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cityLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="IDLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="patientIDTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="communityLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ageLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="patientAgeTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="patientTypeLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="patientHouseTextField2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="communityComboBox" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="patientTypeComboBox" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -116,34 +130,13 @@
                   <Component id="emailLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="patientEmailTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="houseLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientHouseTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cityLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="patientCityextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="communityLabel7" min="-2" max="-2" attributes="0"/>
-                  <Component id="communityComboBox" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <Component id="saveButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="182" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="patientTypeLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
-                      <Component id="saveButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="patientTypeComboBox" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="diagnoseButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -234,10 +227,10 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+            <StringItem index="0" value="Brampton"/>
+            <StringItem index="1" value="Mississauga"/>
+            <StringItem index="2" value="North York"/>
+            <StringItem index="3" value="Oakville"/>
           </StringArray>
         </Property>
       </Properties>
@@ -250,18 +243,10 @@
     </Component>
     <Component class="javax.swing.JButton" name="saveButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Save"/>
+        <Property name="text" type="java.lang.String" value="Save Patient"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="ReturnToPatientReg">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Return To Patient Registration"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReturnToPatientRegActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="patientTypeLabel">
@@ -284,6 +269,41 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="patientTable">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="10" rowCount="4">
+                <Column editable="true" title="Firstname" type="java.lang.Object"/>
+                <Column editable="true" title="Lastname" type="java.lang.Object"/>
+                <Column editable="true" title="ID" type="java.lang.Object"/>
+                <Column editable="true" title="Age" type="java.lang.Object"/>
+                <Column editable="true" title="Phone" type="java.lang.Object"/>
+                <Column editable="true" title="Email" type="java.lang.Object"/>
+                <Column editable="true" title="House" type="java.lang.Object"/>
+                <Column editable="true" title="City" type="java.lang.Object"/>
+                <Column editable="true" title="Community" type="java.lang.Object"/>
+                <Column editable="true" title="Patient Type" type="java.lang.Object"/>
+              </Table>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="diagnoseButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Go To Diagnose"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diagnoseButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

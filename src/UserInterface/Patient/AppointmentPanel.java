@@ -49,6 +49,7 @@ public class AppointmentPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         doctorsTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         goBackToLocationPanel = new javax.swing.JButton();
 
@@ -107,6 +108,7 @@ public class AppointmentPanel extends javax.swing.JPanel {
                         .addGap(262, 262, 262)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
+
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(goBackToLocationPanel)
@@ -117,6 +119,7 @@ public class AppointmentPanel extends javax.swing.JPanel {
                             .addComponent(jButton1)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(447, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,11 +128,13 @@ public class AppointmentPanel extends javax.swing.JPanel {
                 .addComponent(goBackToLocationPanel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
+
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
+
                 .addComponent(jButton1)
                 .addContainerGap(194, Short.MAX_VALUE))
         );
@@ -208,7 +213,6 @@ public class AppointmentPanel extends javax.swing.JPanel {
     private javax.swing.JTable doctorsTable;
     private javax.swing.JButton goBackToLocationPanel;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

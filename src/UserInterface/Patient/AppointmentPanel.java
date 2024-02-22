@@ -36,7 +36,6 @@ public class AppointmentPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         doctorsTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         jLabel1.setText("SELECT DOCTORS TO BOOK AN APPOINTMENT");
 
@@ -90,9 +89,6 @@ public class AppointmentPanel extends javax.swing.JPanel {
                         .addGap(262, 262, 262)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(400, 400, 400)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(316, 316, 316)
                         .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -104,9 +100,7 @@ public class AppointmentPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(75, 75, 75)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(89, 89, 89)
                 .addComponent(jButton1)
                 .addContainerGap(200, Short.MAX_VALUE))
         );
@@ -150,7 +144,6 @@ public class AppointmentPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable doctorsTable;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

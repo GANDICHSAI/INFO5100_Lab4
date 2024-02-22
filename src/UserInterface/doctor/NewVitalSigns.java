@@ -19,8 +19,9 @@ public class NewVitalSigns extends javax.swing.JFrame {
      */
     JPanel bottomPanel;
     public NewVitalSigns(JPanel bottomPanel) {
-        this.bottomPanel = bottomPanel;
         initComponents();
+        this.bottomPanel = bottomPanel;
+
     }
 
     /**
@@ -106,7 +107,7 @@ public class NewVitalSigns extends javax.swing.JFrame {
                             .addComponent(BgTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(pulseTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

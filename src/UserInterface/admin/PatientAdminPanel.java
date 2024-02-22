@@ -9,6 +9,7 @@ import Models.Community;
 import Models.House;
 import Models.Patient;
 import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -136,6 +137,11 @@ public class PatientAdminPanel extends javax.swing.JPanel {
         ageTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageTextFieldActionPerformed(evt);
+            }
+        });
+        ageTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ageTextFieldKeyPressed(evt);
             }
         });
 
@@ -476,6 +482,18 @@ public class PatientAdminPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, e.getMessage(),"Selection Error",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_patientTableMouseClicked
+
+    private void ageTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ageTextFieldKeyPressed
+        // TODO add your handling code here:
+        try{
+            int age = Integer.parseInt(ageTextField.getText());
+            
+            ageTextField.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            ageTextField.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_ageTextFieldKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

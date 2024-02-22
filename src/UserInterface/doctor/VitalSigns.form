@@ -17,50 +17,53 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="temLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="bpLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="bgLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="BPTextField2" alignment="0" pref="110" max="32767" attributes="0"/>
-                          <Component id="BgTextField4" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tempTextField" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="temLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bpLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bgLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="doeLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jDateChooser1" pref="137" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="pulseLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="weightLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="BPTextField2" alignment="0" pref="110" max="32767" attributes="0"/>
+                                  <Component id="BgTextField4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tempTextField" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="weightTextField3" pref="136" max="32767" attributes="0"/>
-                                  <Component id="pulseTextField4" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="doeLabel2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jDateChooser1" pref="137" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="pulseLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="weightLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="weightTextField3" pref="136" max="32767" attributes="0"/>
+                                          <Component id="pulseTextField4" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
+                      <Component id="saveButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="105" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
-              <Component id="saveButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -110,6 +113,9 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="pulseTextField4">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pulseTextField4KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="weightLabel5">
       <Properties>
@@ -132,6 +138,7 @@
     <Component class="javax.swing.JTextField" name="tempTextField">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tempTextFieldActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tempTextFieldKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="bpLabel2">
@@ -140,6 +147,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="BPTextField2">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BPTextField2KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="bgLabel3">
       <Properties>
@@ -147,6 +157,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="weightTextField3">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="weightTextField3KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="pulseLabel4">
       <Properties>
@@ -154,6 +167,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="BgTextField4">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BgTextField4KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="doeLabel2">
       <Properties>

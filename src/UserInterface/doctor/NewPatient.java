@@ -4,10 +4,10 @@
  */
 package UserInterface.doctor;
 
-import Model.City;
-import Model.Community;
-import Model.House;
-import Model.Patient;
+import Models.City;
+import Models.Community;
+import Models.House;
+import Models.Patient;
 import java.awt.CardLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -274,7 +274,7 @@ public class NewPatient extends javax.swing.JPanel {
         // TODO add your handling code here:
         Patient patient = new Patient();
         House house = new House();
-        City city = new City();
+        City city = new City("","");
         Community community = new Community();
         patient.setFirstName(patientFnTextField.getText());
         patient.setLastName(patientLnTextField.getText());

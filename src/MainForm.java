@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import UserInterface.admin.AdminPanel;
 import java.awt.CardLayout;
 
 import UserInterface.doctor.DoctorForm;
@@ -114,7 +115,6 @@ public class MainForm extends javax.swing.JFrame {
     private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed
         // TODO add your handling code here:
         DoctorForm doctorForm = new DoctorForm(bottomPanel);
-//        FormPanel formObject = new FormPanel(bottomPanel);
         bottomPanel.add(doctorForm);
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);
@@ -123,6 +123,11 @@ public class MainForm extends javax.swing.JFrame {
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
         // TODO add your handling code here:
+        
+        AdminPanel adminPanel = new AdminPanel(bottomPanel);
+        bottomPanel.add(adminPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
     }//GEN-LAST:event_adminButtonActionPerformed
 
     /**

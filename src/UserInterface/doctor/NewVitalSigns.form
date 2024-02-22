@@ -45,12 +45,12 @@
                       </Group>
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jDateChooser1" max="32767" attributes="0"/>
                           <Component id="tempTextField" max="32767" attributes="0"/>
                           <Component id="BPTextField2" max="32767" attributes="0"/>
                           <Component id="weightTextField3" alignment="0" pref="165" max="32767" attributes="0"/>
                           <Component id="BgTextField4" alignment="0" pref="165" max="32767" attributes="0"/>
                           <Component id="pulseTextField4" alignment="0" pref="165" max="32767" attributes="0"/>
+                          <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -93,7 +93,7 @@
                   <Component id="doeLabel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
               <Component id="saveButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="146" max="32767" attributes="0"/>
           </Group>

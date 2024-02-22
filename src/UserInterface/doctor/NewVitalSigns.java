@@ -6,7 +6,7 @@ package UserInterface.doctor;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import Model.VitalSigns;
+import Models.VitalSigns;
 
 /**
  *
@@ -100,12 +100,12 @@ public class NewVitalSigns extends javax.swing.JFrame {
                             .addComponent(doeLabel2))
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tempTextField)
                             .addComponent(BPTextField2)
                             .addComponent(weightTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
                             .addComponent(BgTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(pulseTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))))
+                            .addComponent(pulseTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(207, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -137,7 +137,7 @@ public class NewVitalSigns extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(doeLabel2)
                     .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(92, 92, 92)
+                .addGap(88, 88, 88)
                 .addComponent(saveButton1)
                 .addContainerGap(146, Short.MAX_VALUE))
         );
@@ -157,7 +157,7 @@ public class NewVitalSigns extends javax.swing.JFrame {
         userVitals.setBloodGlucose(Double.parseDouble(BgTextField4.getText()));
         userVitals.setPulse(Integer.parseInt(pulseTextField4.getText()));
         userVitals.setWeight(Double.parseDouble(weightTextField3.getText()));
-        userVitals.setDateOfVitalEntry(jDateChooser1.getDate());
+//        userVitals.setDateOfVitalEntry(jDateChooser1.getDate());
         JOptionPane.showMessageDialog(this, "Vital Signs Saved!");
     }//GEN-LAST:event_saveButton1ActionPerformed
 

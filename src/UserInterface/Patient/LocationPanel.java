@@ -6,6 +6,8 @@ package UserInterface.Patient;
 
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import Models.City;
+import Models.Community;
 
 /**
  *
@@ -17,10 +19,13 @@ public class LocationPanel extends javax.swing.JPanel {
      * Creates new form Doctors
      */
     JPanel bottomPanel;
+    Models.Systems rootDataObj;
 
-    public LocationPanel(JPanel bottomPanel) {
+    public LocationPanel(JPanel bottomPanel, Models.Systems rootDataObj) {
         initComponents();
+        this.rootDataObj = rootDataObj;
         this.bottomPanel = bottomPanel;
+        populateCityValues();
     }
 
     /**
@@ -38,8 +43,7 @@ public class LocationPanel extends javax.swing.JPanel {
         cityDropDown = new javax.swing.JComboBox<>();
         communityDropDown = new javax.swing.JComboBox<>();
         submitButton = new javax.swing.JButton();
-        communityDropDown1 = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
+        goBackToPatientPanel = new javax.swing.JButton();
 
         jLabel1.setText("SELECT LOCATION ");
 
@@ -47,9 +51,18 @@ public class LocationPanel extends javax.swing.JPanel {
 
         jLabel3.setText("COMMUNITY");
 
-        cityDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT CITY", "TORONTO", "MONTREAL", "VANCOUVER" }));
+        cityDropDown.setToolTipText("SELECT CITY");
+        cityDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cityDropDownActionPerformed(evt);
+            }
+        });
 
-        communityDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT COMMUNITY", "Item 2", "Item 3", "Item 4" }));
+        communityDropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                communityDropDownActionPerformed(evt);
+            }
+        });
 
         submitButton.setText("SUBMIT");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -58,14 +71,12 @@ public class LocationPanel extends javax.swing.JPanel {
             }
         });
 
-        communityDropDown1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT HOSPITAL", "Item 2", "Item 3", "Item 4" }));
-        communityDropDown1.addActionListener(new java.awt.event.ActionListener() {
+        goBackToPatientPanel.setText("GO BACK");
+        goBackToPatientPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                communityDropDown1ActionPerformed(evt);
+                goBackToPatientPanelActionPerformed(evt);
             }
         });
-
-        jLabel4.setText("HOSPITAL");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -75,29 +86,30 @@ public class LocationPanel extends javax.swing.JPanel {
                 .addGap(270, 270, 270)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel3))
                 .addGap(80, 80, 80)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(communityDropDown1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(communityDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cityDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(226, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(goBackToPatientPanel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(259, 259, 259))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(259, 259, 259))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(submitButton)
-                        .addGap(276, 276, 276))))
+                .addComponent(submitButton)
+                .addGap(280, 280, 280))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(goBackToPatientPanel))
                 .addGap(103, 103, 103)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -106,37 +118,62 @@ public class LocationPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(communityDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(communityDropDown1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(77, 77, 77)
+                .addGap(68, 68, 68)
                 .addComponent(submitButton)
-                .addContainerGap(344, Short.MAX_VALUE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
+
+        cityDropDown.getAccessibleContext().setAccessibleName("SLECT CITY");
     }// </editor-fold>//GEN-END:initComponents
 
+        private void populateCityValues() {
+        for(City cityObj: rootDataObj.getRootCityDirectory()){
+            cityDropDown.addItem(cityObj.getCityName());
+        }
+    }
+    
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        AppointmentPanel appointmentPanel = new AppointmentPanel(bottomPanel);
+        City selectedCity = rootDataObj.getRootCityDirectory().get(cityDropDown.getSelectedIndex());
+        Community selectedCommunity = selectedCity.getCommunityDirectory().get(communityDropDown.getSelectedIndex());
+
+        AppointmentPanel appointmentPanel = new AppointmentPanel(bottomPanel, rootDataObj, selectedCity, selectedCommunity);
         bottomPanel.add(appointmentPanel);
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);
     }//GEN-LAST:event_submitButtonActionPerformed
 
-    private void communityDropDown1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityDropDown1ActionPerformed
+    private void goBackToPatientPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackToPatientPanelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_communityDropDown1ActionPerformed
+
+        AppointmentSelectionPanel appointmentSelectionPanel = new AppointmentSelectionPanel(bottomPanel, rootDataObj);
+        bottomPanel.add(appointmentSelectionPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_goBackToPatientPanelActionPerformed
+
+    private void communityDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communityDropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_communityDropDownActionPerformed
+
+    private void cityDropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityDropDownActionPerformed
+        // TODO add your handling code here:
+        City selectedCity = rootDataObj.getRootCityDirectory().get(cityDropDown.getSelectedIndex());
+        communityDropDown.removeAllItems();
+        for(Community comObj: selectedCity.getCommunityDirectory()){
+            communityDropDown.addItem(comObj.getCommunityName());
+        }
+        communityDropDown.setSelectedItem(null);
+    }//GEN-LAST:event_cityDropDownActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cityDropDown;
     private javax.swing.JComboBox<String> communityDropDown;
-    private javax.swing.JComboBox<String> communityDropDown1;
+    private javax.swing.JButton goBackToPatientPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,6 +13,10 @@ import java.util.ArrayList;
 public class DoctorDirectory {
     
     private ArrayList<Doctor> doctors;
+    
+    public DoctorDirectory() {
+        this.doctors = new ArrayList<>();
+    }
 
     public ArrayList<Doctor> getDoctors() {
         return doctors;
@@ -31,9 +35,5 @@ public class DoctorDirectory {
         this.doctors.remove(doctors);
     
     }
-    
-    
-    
-    
     
 }

@@ -8,6 +8,7 @@ import java.awt.CardLayout;
 
 import UserInterface.doctor.DoctorForm;
 import UserInterface.Patient.AppointmentSelectionPanel;
+import Models.Systems;
 
 
 /**
@@ -19,8 +20,11 @@ public class MainForm extends javax.swing.JFrame {
     /**
      * Creates new form MainForm
      */
+    Models.Systems rootDataObj;
+
     public MainForm() {
         initComponents();
+        this.rootDataObj = new Systems();
     }
 
     /**
@@ -112,7 +116,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void pattientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pattientButtonActionPerformed
         // TODO add your handling code here:
-        AppointmentSelectionPanel appointmentSelectionPanel = new AppointmentSelectionPanel(bottomPanel);
+        AppointmentSelectionPanel appointmentSelectionPanel = new AppointmentSelectionPanel(bottomPanel, this.rootDataObj);
         bottomPanel.add(appointmentSelectionPanel);
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);

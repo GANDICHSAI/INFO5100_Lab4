@@ -4,8 +4,13 @@
  */
 package UserInterface.Patient;
 
+import Models.Hospital;
+import Models.DoctorDirectory;
+import Models.Doctor;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,10 +22,18 @@ public class AppointmentPanel extends javax.swing.JPanel {
      * Creates new form AppointmentPanel
      */
     JPanel bottomPanel;
+    Models.Systems rootDataObj;
+    Models.City selectedCity;
+    Models.Community selectedCommunity;
 
-    public AppointmentPanel(JPanel bottomPanel) {
+
+    public AppointmentPanel(JPanel bottomPanel, Models.Systems rootDataObj,  Models.City selectedCity, Models.Community selectedCommunity) {
         initComponents();
         this.bottomPanel = bottomPanel;
+        this.rootDataObj = rootDataObj;
+        this.selectedCity = selectedCity;
+        this.selectedCommunity = selectedCommunity;
+        populateDoctorTableData();
     }
 
     /**
@@ -36,6 +49,9 @@ public class AppointmentPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         doctorsTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        goBackToLocationPanel = new javax.swing.JButton();
 
         jLabel1.setText("SELECT DOCTORS TO BOOK AN APPOINTMENT");
 
@@ -75,34 +91,52 @@ public class AppointmentPanel extends javax.swing.JPanel {
             }
         });
 
+        goBackToLocationPanel.setText("GO BACK");
+        goBackToLocationPanel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goBackToLocationPanelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 821, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(491, 491, 491))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(262, 262, 262)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(316, 316, 316)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(goBackToLocationPanel)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 853, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(341, 341, 341)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(447, Short.MAX_VALUE))
+
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
+                .addComponent(goBackToLocationPanel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(75, 75, 75)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89)
+
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+
                 .addComponent(jButton1)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -140,9 +174,44 @@ public class AppointmentPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Appointment Made Successfully!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void goBackToLocationPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackToLocationPanelActionPerformed
+        // TODO add your handling code here:
+
+        LocationPanel locationPanel = new LocationPanel(bottomPanel, this.rootDataObj);
+        bottomPanel.add(locationPanel);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+    }//GEN-LAST:event_goBackToLocationPanelActionPerformed
+
+      private void populateDoctorTableData() {
+        DefaultTableModel model = (DefaultTableModel) doctorsTable.getModel();
+        model.setRowCount(0);
+        DoctorDirectory doctorDirectory = new DoctorDirectory();
+        
+//        System.out.println("", this.rootDataObj.getRootHospitalDirectory());
+        
+        for(Hospital hospitalObj: this.rootDataObj.getRootHospitalDirectory()){
+            if(hospitalObj.getCommunity().getCommunityName() == null ? selectedCommunity.getCommunityName() == null : hospitalObj.getCommunity().getCommunityName().equals(selectedCommunity.getCommunityName())) {
+               doctorDirectory = hospitalObj.getDoctorsDirectory();
+//               model.addRow(hospitalObj.getHospitalName());
+            }
+        }
+        for (Doctor docObj: doctorDirectory.getDoctors()){
+            Object[] row = new Object[6];
+
+            row[0] = docObj.getFirstName();
+            row[1] = docObj.getLastName();
+            row[2] = docObj.getCity().getCityName();
+            row[3] = docObj.getSpecialty();
+            row[4] = docObj.getYearsOfExperiencce();
+            row[5] = docObj.getQualifications();
+            model.addRow(row);
+        }
+    }    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable doctorsTable;
+    private javax.swing.JButton goBackToLocationPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

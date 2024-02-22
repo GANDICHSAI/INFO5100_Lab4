@@ -12,11 +12,11 @@ import java.util.Date;
 /**
  * @author yihan
  */
-public class System {
+public class Systems {
     private ArrayList<City> rootCityDirectory;
     private ArrayList<Hospital> rootHospitalDirectory;
 
-    public System() {
+    public Systems() {
         this.rootCityDirectory = new ArrayList<>();
         this.rootHospitalDirectory = new ArrayList<>();
         initCityData();
@@ -171,6 +171,8 @@ public class System {
 
         // doctor Dir
         DoctorDirectory newDoctorDirectory = new DoctorDirectory();
+        newHospital.setDoctorsDirectory(newDoctorDirectory);
+
         Community mockedCommunityForDr1 = mockCommunity("downtown");
         City mockedCityForDr1 = mockCity("Toronto", "M4Y", torontoCommunityList);
         House mockedHouseForDr1 = mockHouse("55", "Bay St");

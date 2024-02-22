@@ -120,7 +120,6 @@ public class MainForm extends javax.swing.JFrame {
         bottomPanel.add(appointmentSelectionPanel);
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);
-        System.out.println("-----" + this.rootDataObj.getRootCityDirectory());
     }//GEN-LAST:event_pattientButtonActionPerformed
 
     private void doctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorButtonActionPerformed

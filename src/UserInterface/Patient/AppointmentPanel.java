@@ -5,6 +5,8 @@
 package UserInterface.Patient;
 
 import Models.Hospital;
+import Models.DoctorDirectory;
+import Models.Doctor;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -21,12 +23,17 @@ public class AppointmentPanel extends javax.swing.JPanel {
      */
     JPanel bottomPanel;
     Models.Systems rootDataObj;
+    Models.City selectedCity;
+    Models.Community selectedCommunity;
 
 
-    public AppointmentPanel(JPanel bottomPanel, Models.Systems rootDataObj) {
+    public AppointmentPanel(JPanel bottomPanel, Models.Systems rootDataObj,  Models.City selectedCity, Models.Community selectedCommunity) {
         initComponents();
         this.bottomPanel = bottomPanel;
         this.rootDataObj = rootDataObj;
+        this.selectedCity = selectedCity;
+        this.selectedCommunity = selectedCommunity;
+        populateDoctorTableData();
     }
 
     /**
@@ -171,12 +178,31 @@ public class AppointmentPanel extends javax.swing.JPanel {
         layout.next(bottomPanel);
     }//GEN-LAST:event_goBackToLocationPanelActionPerformed
 
-    private void populateDoctorTableData() {
+      private void populateDoctorTableData() {
         DefaultTableModel model = (DefaultTableModel) doctorsTable.getModel();
         model.setRowCount(0);
+        DoctorDirectory doctorDirectory = new DoctorDirectory();
         
+//        System.out.println("", this.rootDataObj.getRootHospitalDirectory());
+        
+        for(Hospital hospitalObj: this.rootDataObj.getRootHospitalDirectory()){
+            if(hospitalObj.getCommunity().getCommunityName() == null ? selectedCommunity.getCommunityName() == null : hospitalObj.getCommunity().getCommunityName().equals(selectedCommunity.getCommunityName())) {
+               doctorDirectory = hospitalObj.getDoctorsDirectory();
+//               model.addRow(hospitalObj.getHospitalName());
+            }
+        }
+        for (Doctor docObj: doctorDirectory.getDoctors()){
+            Object[] row = new Object[6];
 
-    }   
+            row[0] = docObj.getFirstName();
+            row[1] = docObj.getLastName();
+            row[2] = docObj.getCity().getCityName();
+            row[3] = docObj.getSpecialty();
+            row[4] = docObj.getYearsOfExperiencce();
+            row[5] = docObj.getQualifications();
+            model.addRow(row);
+        }
+    }    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable doctorsTable;

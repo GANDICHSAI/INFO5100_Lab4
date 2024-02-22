@@ -134,7 +134,10 @@ public class LocationPanel extends javax.swing.JPanel {
     
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        AppointmentPanel appointmentPanel = new AppointmentPanel(bottomPanel, rootDataObj);
+        City selectedCity = rootDataObj.getRootCityDirectory().get(cityDropDown.getSelectedIndex());
+        Community selectedCommunity = selectedCity.getCommunityDirectory().get(communityDropDown.getSelectedIndex());
+
+        AppointmentPanel appointmentPanel = new AppointmentPanel(bottomPanel, rootDataObj, selectedCity, selectedCommunity);
         bottomPanel.add(appointmentPanel);
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);

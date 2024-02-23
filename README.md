@@ -18,10 +18,21 @@ This system is implemented based on the following assumptions:
     ```java
     addCredentials("C001", "helloworld");
     addCredentials("admin2", "password2");
-2. [Please insert assumptions for admin roles]
-3. [Please insert assumptions for patient role]
+2. A community admin can modify hospital data, patient data, doctor data, and community data under a community. A system admin can access and modify all data.
+3. A patient can search hospital and doctor based on city and community, and choose a doctor to make an appointment.
 4. Doctor can add new patient by creating new patient entry first, then diagnose vital signs. The encounters are recored after creation of new entries. Doctor cannot modify or delete patient encounters.
+5. version-1: data mocked by Systems.java
 
+## File Structure
+- `src/`: Contains the source code of the project.
+  - `UserInterface/`: Contains the user interface components.
+    - `MainForm/`: Application framework.
+    - `Admin/`: Contains files related to the admin interface.
+    - `Doctor/`: Contains files related to the doctor interface.
+    - `Patient/`: Contains files related to the patient interface.
+  - `Models/`: Contains the model classes representing entities in the system.
+    - `Systems/`: Create mock data 
+    
 ## Authors and acknowledgment
 Chaitanya Sai Gandi <br>
 Yihan Li <br>

@@ -5,6 +5,7 @@
 package UserInterface.doctor;
 
 import Models.Patient;
+import java.awt.Color;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -52,6 +53,12 @@ public class VitalSignsPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(51, 51, 51));
 
+        pulseTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pulseTextField4ActionPerformed(evt);
+            }
+        });
+
         weightLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         weightLabel5.setForeground(new java.awt.Color(255, 255, 255));
         weightLabel5.setText("Weight");
@@ -69,18 +76,41 @@ public class VitalSignsPanel extends javax.swing.JPanel {
                 tempTextFieldActionPerformed(evt);
             }
         });
+        tempTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tempTextFieldKeyPressed(evt);
+            }
+        });
 
         bpLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bpLabel2.setForeground(new java.awt.Color(255, 255, 255));
         bpLabel2.setText("Blood Pressure");
 
+        BPTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BPTextField2KeyPressed(evt);
+            }
+        });
+
         bgLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         bgLabel3.setForeground(new java.awt.Color(255, 255, 255));
         bgLabel3.setText("Blood Glucose");
 
+        weightTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                weightTextField3KeyPressed(evt);
+            }
+        });
+
         pulseLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         pulseLabel4.setForeground(new java.awt.Color(255, 255, 255));
         pulseLabel4.setText("Pulse");
+
+        BgTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BgTextField4KeyPressed(evt);
+            }
+        });
 
         doeLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         doeLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,6 +209,66 @@ public class VitalSignsPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Diagnosis Completed");
         
     }//GEN-LAST:event_saveButton1ActionPerformed
+
+    private void tempTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tempTextFieldKeyPressed
+        // TODO add your handling code here:
+        try{
+            double temp = Double.parseDouble(tempTextField.getText());
+            //int temperature = Integer.parseInt(tempTextField.getText());
+            tempTextField.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            tempTextField.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_tempTextFieldKeyPressed
+
+    private void BPTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BPTextField2KeyPressed
+        // TODO add your handling code here:
+//        try{
+//            double temp = Double.parseDouble(BPTextField2.getText());
+//            //int temperature = Integer.parseInt(tempTextField.getText());
+//            BPTextField2.setForeground(Color.black);
+//        } 
+//        catch(Exception e){
+//            BPTextField2.setForeground(Color.red);
+//        }
+    }//GEN-LAST:event_BPTextField2KeyPressed
+
+    private void BgTextField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BgTextField4KeyPressed
+        // TODO add your handling code here:
+        try{
+            double bg = Double.parseDouble(BgTextField4.getText());
+            
+            BgTextField4.setForeground(Color.black);
+        } 
+        catch(Exception e){
+            BgTextField4.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_BgTextField4KeyPressed
+
+    private void pulseTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulseTextField4ActionPerformed
+        // TODO add your handling code here:
+        try{
+            
+            int pulse = Integer.parseInt(pulseTextField4.getText());
+            pulseTextField4.setForeground(Color.black);
+        } 
+        catch(Exception e){
+           pulseTextField4.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_pulseTextField4ActionPerformed
+
+    private void weightTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_weightTextField3KeyPressed
+        // TODO add your handling code here:
+        try{
+            
+            int weight = Integer.parseInt(weightTextField3.getText());
+            weightTextField3.setForeground(Color.black);
+        } 
+        catch(Exception e){
+           weightTextField3.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_weightTextField3KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

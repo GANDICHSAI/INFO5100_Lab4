@@ -6,6 +6,8 @@ The system has admins with 4 different roles (patient, doctor, community and hos
 Patient users can search for doctors based on hospitals in their community.<br>
 Doctors users can create new entry for new patient, diagnose vital signs and save data diagnosed patients in encounters history.
 
+**Note:** Screenshots are sourced from the final branch, but due to some Git issues on the final branch, this submission is on the dev branch.
+
 ## Class Diagram
 ![Lab4-ClassDiagram](https://github.com/GANDICHSAI/INFO5100_Lab4/assets/157151106/07d67423-7ec1-4dee-bb99-77ad1ac8ff1c)
 

@@ -89,13 +89,11 @@ public class DoctorPatientEncounterPanel extends javax.swing.JPanel {
 
     private void upcomingPatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingPatientButtonActionPerformed
         // TODO add your handling code here:
-        
-       
-        
-        
-        
-        
-        
+        NewPatientPanel newPatient= new NewPatientPanel(bottomPanel);
+        bottomPanel.add(newPatient);
+        CardLayout layout = (CardLayout) bottomPanel.getLayout();
+        layout.next(bottomPanel);
+
     }//GEN-LAST:event_upcomingPatientButtonActionPerformed
 
     private void pastPatientHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pastPatientHistoryButtonActionPerformed

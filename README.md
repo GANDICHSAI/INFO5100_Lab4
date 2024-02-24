@@ -16,8 +16,8 @@ Date selection uses library jcalendar-1.4
 This system is implemented based on the following assumptions:
 1. The credentials for admin and doctor log-in are as follows:
     ```java
-    addCredentials("C001", "helloworld");
-    addCredentials("admin2", "password2");
+    addCredentials("admin", "admin");
+    addCredentials("doctor", "doctor");
 2. A community admin can modify hospital data, patient data, doctor data, and community data under a community. A system admin can access and modify all data.
 3. A patient can search hospital and doctor based on city and community, and choose a doctor to make an appointment.
 4. Doctor can add new patient by creating new patient entry first, then diagnose vital signs. The encounters are recored after creation of new entries. Doctor cannot modify or delete patient encounters.

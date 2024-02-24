@@ -9,6 +9,7 @@ import Models.Community;
 import Models.House;
 import Models.Patient;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
@@ -114,6 +115,24 @@ public class NewPatientPanel extends javax.swing.JPanel {
         patientFnTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patientFnTextFieldActionPerformed(evt);
+            }
+        });
+
+        patientIDTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                patientIDTextField1KeyPressed(evt);
+            }
+        });
+
+        patientPnTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                patientPnTextField2KeyPressed(evt);
+            }
+        });
+
+        patientAgeTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                patientAgeTextField3KeyPressed(evt);
             }
         });
 
@@ -366,6 +385,42 @@ public class NewPatientPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) bottomPanel.getLayout();
         layout.next(bottomPanel);
     }//GEN-LAST:event_diagnoseButtonActionPerformed
+
+    private void patientAgeTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientAgeTextField3KeyPressed
+        // TODO add your handling code here:
+        try{
+            
+            int age = Integer.parseInt(patientAgeTextField3.getText());
+            patientAgeTextField3.setForeground(Color.black);
+        } 
+        catch(Exception e){
+           patientAgeTextField3.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_patientAgeTextField3KeyPressed
+
+    private void patientIDTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientIDTextField1KeyPressed
+        // TODO add your handling code here:
+        try{
+            
+            int id = Integer.parseInt(patientIDTextField1.getText());
+            patientIDTextField1.setForeground(Color.black);
+        } 
+        catch(Exception e){
+           patientIDTextField1.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_patientIDTextField1KeyPressed
+
+    private void patientPnTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_patientPnTextField2KeyPressed
+        // TODO add your handling code here:
+        try{
+            
+            Long id = Long.parseLong(patientPnTextField2.getText());
+            patientPnTextField2.setForeground(Color.black);
+        } 
+        catch(Exception e){
+           patientPnTextField2.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_patientPnTextField2KeyPressed
     private void populatePatientDetails(Patient patient){
         
         String data[] = {patient.getFirstName(),

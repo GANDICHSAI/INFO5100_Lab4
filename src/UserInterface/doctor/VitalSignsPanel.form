@@ -101,6 +101,9 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="pulseTextField4">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pulseTextField4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="weightLabel5">
       <Properties>
@@ -138,6 +141,7 @@
     <Component class="javax.swing.JTextField" name="tempTextField">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tempTextFieldActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tempTextFieldKeyPressed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="bpLabel2">
@@ -152,6 +156,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="BPTextField2">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BPTextField2KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="bgLabel3">
       <Properties>
@@ -165,6 +172,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="weightTextField3">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="weightTextField3KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="pulseLabel4">
       <Properties>
@@ -178,6 +188,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="BgTextField4">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BgTextField4KeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="doeLabel2">
       <Properties>
